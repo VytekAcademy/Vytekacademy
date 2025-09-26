@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment Form - Vytek Academy</title>
+    <meta name="description" content="Complete your course enrollment by providing your details.">
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:#e8e9ed; font-size:22px; font-weight:bold;">
+      <img src="img/logo.jpg" alt="Vytek Academy Logo" style="height:45px; border-radius:8px;">
+      Vytek Academy
+    </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero slide-in">
+            <h1>Course Enrollment Form</h1>
+            <p>Complete your enrollment by providing the required details below.</p>
+        </section>
+
+        <section class="payment-section">
+            <h2>Enrollment Details</h2>
+            
+            <!-- Enrollment Form -->
+            <!-- Note: In a real deployment, this form data should be stored in the Oracle database and processed by the backend -->
+            <form action="#" method="post" id="enrollment-form">
+                <div class="form-group">
+                    <label for="full-name">Full Name *</label>
+                    <input type="text" id="full-name" name="full-name" required 
+                           placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required 
+                           pattern="[0-9]{10}" 
+                           placeholder="Enter your 10-digit phone number"
+                           title="Please enter a valid 10-digit phone number">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="Enter your email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="course-selected">Course Selected *</label>
+                    <select id="course-selected" name="course-selected" required>
+                        <option value="">Select a course</option>
+                        <option value="digital-marketing">30-day Digital Marketing Bootcamp - ₹1,999</option>
+                        <option value="data-science">Data Science - ₹99</option>
+                        <option value="cloud-computing">Cloud Computing - ₹99</option>
+                        <option value="computer-networks">Computer Networks - ₹99</option>
+                        <option value="ai-ml">AI & ML - ₹99</option>
+                    </select>
+                </div>
+
+                <div class="policy-content">
+                    <h3>Confirmation</h3>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="final-agreement" name="final-agreement" required>
+                        <label for="final-agreement">
+                            I confirm that I have completed the payment and agree to all terms and conditions. I understand that courses are created using AI and no refunds are available.
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-warning">Complete Enrollment</button>
+            </form>
+
+            <div class="policy-content mt-3">
+                <p><strong>Note:</strong> The student will receive course access within 24 hours of successful form submission and payment verification.</p>
+            </div>
+        </section>
+
+        <section class="policy-content">
+            <h3>What Happens Next?</h3>
+            <ul>
+                <li>Your enrollment will be processed within 24 hours</li>
+                <li>You will receive course access credentials via email</li>
+                <li>All course materials will be available in your student portal</li>
+                <li>For any queries, contact us via our social media channels</li>
+            </ul>
+            <p><strong>Remember: No refunds are available after enrollment.</strong></p>
+        </section>
+    </main>
+
+   <!-- Premium Footer - Vytek Academy -->
+<footer style="background: #0D1117; color: #fff; font-family: 'Poppins', sans-serif; padding: 40px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;">
+    
+    <!-- Left: Logo and Name -->
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="img/logo.jpg" alt="Vytek Academy Logo" style="height: 50px; width: auto; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+        <h2 style="font-size: 1.8rem; font-weight: 700; color: #3B82F6;">Vytek Academy</h2>
+    </div>
+
+    <!-- Center: Contact Info & Social Links -->
+    <div style="text-align: center;">
+        <p style="margin: 0; font-size: 1rem;">Contact us: <a href="mailto:vytekonline@gmail.com" style="color: #60A5FA; text-decoration: none;">vytekonline@gmail.com</a></p>
+        <p style="margin: 5px 0;">Follow us:
+            <a href="https://www.instagram.com/vytek.academy/" target="_blank" rel="noopener" style="margin:0 5px; color:#271bd5;"><i class="fab fa-instagram"></i> Instagram</a> |
+            <a href="https://www.facebook.com/vytek.academy/" target="_blank" rel="noopener" style="margin:0 5px; color:#271bd5;"><i class="fab fa-facebook-f"></i> Facebook</a>
+        </p>
+    </div>
+
+    <!-- Right: Copyright -->
+    <div style="text-align: right; font-size: 0.9rem; color:#271bd5;">
+        <p>© 2024 Vytek Academy. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Font Awesome CDN for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Form handling for demonstration -->
+    <script>
+        
+document.getElementById('enrollment-form').addEventListener('submit', function(e) {
+    e.preventDefault();  // stop page reload
+
+    const formData = new FormData(this);
+
+    fetch('https://script.google.com/macros/s/AKfycbz9cIzZ0J4Suz6rjqJ01XLuKugMRFWe3RC9-n_H0Ib0mgDvY5_XIUnJPPcC0RdcSBx6/exec', {  // replace with your Web App URL
+        method:'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "success") {
+            alert("Your enrollment has been submitted successfully!");
+            document.getElementById('enrollment-form').reset();
+        } else {
+            alert("Something went wrong. Please try again.");
+        }
+    })
+    .catch(err => alert("Error submitting form: " + err));
+});
+</script>
+
+        <script>
+        // Pre-select course based on referrer or hash
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const course = urlParams.get('course') || window.location.hash.substring(1);
+            
+            if (course) {
+                const selectElement = document.getElementById('course-selected');
+                const option = selectElement.querySelector(`option[value="${course}"]`);
+                if (option) {
+                    selectElement.value = course;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
